@@ -5,7 +5,7 @@ export const Header = () => {
     <nav style={{ margin: "2rem" }}>
       <Link to="/">
         <h1>
-          <b>Journal</b>
+          <b>Inventory Management</b>
         </h1>
       </Link>
     </nav>

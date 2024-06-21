@@ -7,17 +7,34 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  email String  @unique
-  id    Int     @default(autoincrement()) @id
-  name  String?
-  posts Post[]
+model Packages {
+  id              Int     @default(autoincrement()) @id
+  name            String?
+  products        Products[]
 }
 
-model Post {
-  authorId  Int?
-  content   String?
-  id        Int     @default(autoincrement()) @id
-  title     String
-  author    User?   @relation(fields: [authorId], references: [id])
+model Products {
+  id              Int     @unique
+  package_id      Int
+  quantity        Int
+  product_name    String
+  package         Packages?   @relation(fields: [package_id], references: [id], onDelete: Cascade)
+}
+
+model Orders {
+  id              Int     @unique
+  total           Int
+  date            DateTime
+  address         String
+  customer_name   String
+  customer_email  String
+  orderPackages   OrderPackages[]
+}
+
+model OrderPackages {
+  id              Int     @unique
+  order_id        Int
+  package_id      Int
+  price           Int
+  order           Orders?     @relation(fields: [order_id], references: [id], onDelete: Cascade)
 }
