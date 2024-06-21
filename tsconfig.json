@@ -7,7 +7,7 @@
     "**/.client/**/*.ts",
     "**/.client/**/*.tsx",
     "prisma/seed.ts"
-, "app/routes/_index.js", "app/data/packages.js"  ],
+, "app/routes/_index.js", "app/data/packages.js", "app/data/orders.js"  ],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "types": ["@remix-run/node", "vite/client"],

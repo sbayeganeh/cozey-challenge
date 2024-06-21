@@ -42,6 +42,7 @@ export default function Index() {
     })
   }
 
+  // Get items to be shipped for the day
   {
     orders.map((order: any) => {
       return order.orderPackages.map((pack: any) => {
@@ -54,6 +55,7 @@ export default function Index() {
     })
   }
 
+  // Sort items to be shipped for the day
   itemsToGrabFromShelve = itemsToGrabFromShelve.sort()
 
   const handleDateChage = (event:any) => {
